@@ -137,3 +137,60 @@ The reference to module of the script is changed to `App.jsx`.
 </html>
 
 ```
+
+### Function Components
+
+Function Components:
+- These were simply JavaScript functions that return JSX.
+- Historically, they were stateless, meaning they didn't manage their own state. They received data through props and rendered it.
+- With the introduction of Hooks, function components can now manage state, handle side effects, and access many of the features that were previously exclusive to class components.
+
+```javascript
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+OR
+const Welcome = (props) => {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+```
+
+### Hooks
+
+Functions starting with use are called Hooks. These special type of function lets you "hook into" React features from function components. `useState` is a built-in Hook provided by React. You can find other built-in Hooks in the API reference. You can also write your own Hooks by combining the existing ones.
+
+Hooks are more restrictive than other functions. You can only call Hooks at the top of your components (or other Hooks). If you want to use `useState` in a condition or a loop, extract a new component and put it there.
+
+```javascript
+import { useState } from "react";
+
+const SearchParams = () => {
+  // replace location
+  const [location, updateLocation] = useState("");
+  return (
+    <div className="search-params">
+      <form>
+        <label htmlFor="location">
+          Location
+          <input
+            id="location"
+            value={location}
+            placeholder="Location"
+            onChange={(e) => updateLocation(e.target.value)}
+          />
+        </label>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default SearchParams;
+```
+
+- The argument given to `useState` is the default value. In our case, we could give it "Seattle, WA" as our default value but let's give it a default empty string value.
+- `useState` returns to us an array with two things in it: the current value of that state and a function to update that state. We're using a feature of JavaScript called destructuring to get both of those things out of the array.
+- We use the `updateLocation` function in the `onChange` attribute of the input. Every time the input is typed into, it's going to call that function which calls `updateLocation` with what has been typed into the input. When `updateLocation` is called, React knows that its state has been modified and kicks off a re-render.
+- You can make your own custom hooks; `useState` is just one of many.
