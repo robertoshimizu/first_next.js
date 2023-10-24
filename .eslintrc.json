@@ -4,7 +4,8 @@
               "plugin:react/recommended",
               "plugin:jsx-a11y/recommended",
               "plugin:react-hooks/recommended",
-              "prettier"],
+              // Make sure prettier is always the last element in the array.
+              "prettier"], 
   "rules": {
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0
