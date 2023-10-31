@@ -12,11 +12,8 @@ import {
 } from '@/components/ui/sheet'
 import { IconSidebar } from '@/components/ui/icons'
 
-export interface SidebarProps {
-  children?: React.ReactNode
-}
 
-export function Sidebar({ children }: SidebarProps) {
+export function Sidebar({ children }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
