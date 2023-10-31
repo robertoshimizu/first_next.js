@@ -76,8 +76,7 @@ export function SidebarActions({
   return (
     <>
       <div className="space-x-1">
-        <Tooltip>
-          <TooltipTrigger asChild>
+      
             <Button
               variant="ghost"
               className="h-6 w-6 p-0 hover:bg-background"
@@ -86,11 +85,7 @@ export function SidebarActions({
               <IconShare />
               <span className="sr-only">Share</span>
             </Button>
-          </TooltipTrigger>
-          <TooltipContent>Share chat</TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger asChild>
+   
             <Button
               variant="ghost"
               className="h-6 w-6 p-0 hover:bg-background"
@@ -100,9 +95,7 @@ export function SidebarActions({
               <IconTrash />
               <span className="sr-only">Delete</span>
             </Button>
-          </TooltipTrigger>
-          <TooltipContent>Delete chat</TooltipContent>
-        </Tooltip>
+    
       </div>
       <Dialog open={shareDialogOpen} onOpenChange={setShareDialogOpen}>
         <DialogContent>

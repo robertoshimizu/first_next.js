@@ -44,8 +44,7 @@ export function PromptForm({
       ref={formRef}
     >
       <div className="relative flex max-h-60 w-full grow flex-col overflow-hidden bg-background px-8 sm:rounded-md sm:border sm:px-12">
-        <Tooltip>
-          <TooltipTrigger asChild>
+        
             <button
               onClick={e => {
                 e.preventDefault()
@@ -60,9 +59,7 @@ export function PromptForm({
               <IconPlus />
               <span className="sr-only">New Chat</span>
             </button>
-          </TooltipTrigger>
-          <TooltipContent>New Chat</TooltipContent>
-        </Tooltip>
+        
         <Textarea
           ref={inputRef}
           tabIndex={0}
@@ -75,8 +72,7 @@ export function PromptForm({
           className="min-h-[60px] w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
         />
         <div className="absolute right-0 top-4 sm:right-4">
-          <Tooltip>
-            <TooltipTrigger asChild>
+        
               <Button
                 type="submit"
                 size="icon"
@@ -85,9 +81,6 @@ export function PromptForm({
                 <IconArrowElbow />
                 <span className="sr-only">Send message</span>
               </Button>
-            </TooltipTrigger>
-            <TooltipContent>Send message</TooltipContent>
-          </Tooltip>
         </div>
       </div>
     </form>
