@@ -5,6 +5,7 @@ import Pet from "./Pet";
 import SearchParams from "./SearchParams";
 import Animal from "./Animal";
 import Profile from "./User";
+import React from "react";
 
 // delete the Pet component
 
@@ -28,4 +29,8 @@ const App = () => {
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<App />);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);

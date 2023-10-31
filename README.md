@@ -198,3 +198,9 @@ export default SearchParams;
 - You can make your own custom hooks; `useState` is just one of many.
 
 Reference: https://react.dev/learn/thinking-in-react
+
+### `<StrictMode>`
+
+`<StrictMode>` lets you find common bugs in your components early during development.
+
+https://react.dev/reference/react/StrictMode
