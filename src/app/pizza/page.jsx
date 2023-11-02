@@ -1,9 +1,25 @@
+import Image from 'next/image'
 
-
-export default function Pizza() {
+function Pizza() {
   return (
     <div>
-      <h1>Adopt Me!</h1>     
+      <Image
+        src="/focaccia.jpg"
+        width={400}
+        height={400}
+        alt="focaccia"
+        />
+      <h2>Pizza Focaccia</h2>
+      <p>Tomato, mozarella and Focaccia</p>
+    </div>
+  )
+}
+
+export default function Menu() {
+  return (
+    <div>
+      <h1>Menu</h1>     
+      <Pizza />
     </div>
   );
 };

@@ -204,3 +204,36 @@ Reference: https://react.dev/learn/thinking-in-react
 `<StrictMode>` lets you find common bugs in your components early during development.
 
 https://react.dev/reference/react/StrictMode
+
+
+## Images
+Using images in Next.js is a bit different:
+
+All your static assets like images must be placed in the public directory.
+
+If your code is under src directory, i.e <app-name>/src/pages , <app-name>/src/components, ... then your public folder must be outside of the src directory. Public folder cannot be under src as <app-name>/src/public. In this case your public directory must be under <app-name>/public.
+
+If your code is not under src directory, i.e <app-name>/pages, <app-name>/components, ... then your public directory should be under <app-name>/public
+
+Once you have that sorted, directly refer to the file in the <Image /> component provided by next/image as:
+
+import Image from "next/image"
+<Image src="/sample-image.png" width="64" height="64" />
+or
+
+import Image from "next/image"
+import sampleImage from "<file-path>"
+
+<Image src={sampleImage} width="64" height="64" />
+provided you have a file under public/sample-image.png
+
+If you have an image URL, directly provide it to the 'src' prop.
+
+Find descriptive examples related to layouts at: https://github.com/vercel/next.js/tree/canary/examples/image-component
+
+References:
+
+https://nextjs.org/docs/basic-features/static-file-serving
+https://nextjs.org/docs/api-reference/next/image
+https://nextjs.org/docs/basic-features/image-optimization
+https://nextjs.org/docs/advanced-features/src-directory
